@@ -4,6 +4,15 @@ from django.http import HttpResponse,HttpResponseRedirect
 # Create your views here.
 
 
+def logout(request):
+    auth.logout(request)
+    return render(request,'login.html')
+
+
+def home(request):
+    return render(request,'home.html')
+
+
 def login(request):
     if request.POST:
         username = password = ''
