@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apitest import views
+from apitest import apitest_views
+from product import product_views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.test),
-    path('login/', views.login),
-    path('home/',views.home),
-    path('logout/',views.logout)
+    path('test/', apitest_views.test),
+    path('login/', apitest_views.login),
+    path('home/',apitest_views.home),
+    path('logout/',apitest_views.logout),  # 退出登录
+    path('product_manage/', product_views.product_manage),
+
 ]
